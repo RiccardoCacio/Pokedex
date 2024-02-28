@@ -12,6 +12,7 @@ const Main = () => {
     const [pokemonIsCharge, setPokemonIsCharge] = useState(true);
     const [chargeIsCorrect, setChargeIsCorrect] = useState(true);
 
+
     //rotate img
     const [imgIsFront, setImgIsFront] = useState(true);
     const changeImg = () => { setImgIsFront(imgIsFront => !imgIsFront) };
@@ -19,6 +20,7 @@ const Main = () => {
 
     const ButtonCall = () => {
         setPokemonIsCharge(false);
+        setImgIsFront(true);
         const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonUrl}/`;
         if (!pokemonUrl) return;
 
@@ -59,7 +61,12 @@ const Main = () => {
                     <div className='mt-8 ml-3 h-[25px] w-[25px] border-solid border-black border-2 rounded-[50%] bg-red-700'></div>
                     <div className='mt-8 ml-3 h-[25px] w-[25px] border-solid border-black border-2 rounded-[50%] bg-yellow-400'></div>
                     <div className='mt-8 ml-3 h-[25px] w-[25px] border-solid border-black border-2 rounded-[50%] bg-green-500'></div>
+
                 </div>
+
+
+
+
                 <div className='flex'>
                     <hr className=' mt-7 w-[250px] border-t-2 border-black' />
                     <hr className='max-sm:mt-[16px] mt-[13px] ml-[-3px] w-[90px] rotate-[160deg] border-t-2 border-black' />
@@ -71,6 +78,7 @@ const Main = () => {
                         <div className='flex justify-center gap-5 mt-3'>
                             <div className=' h-3 w-3 rounded-xl bg-[#CB3234] border-solid border-black border-2'></div>
                             <div className=' h-3 w-3 rounded-xl bg-[#CB3234] border-solid border-black border-2'></div>
+
                         </div>
                         {/* display black */}
                         <div className='justify-center items-center flex flex-col  mt-[17px] h-[250px] w-[270px] border-solid border-black border-2 bg-[#252525] m-auto'>
@@ -107,6 +115,7 @@ const Main = () => {
 
                         <div className='flex justify-around'>
                             <div className='h-3 w-3 rounded-xl bg-[#CB3234] border-solid border-black border-2'></div>
+
                             <div className='mb-3 flex flex-col gap-[1px]'>
                                 <hr className='w-[20px] border-t-2 border-black ' />
                                 <hr className='w-[20px] border-t-2 border-black ' />
@@ -119,7 +128,7 @@ const Main = () => {
                 {/* display */}
 
                 <div>
-                    <input typeof='text' onChange={(e) => setPokemonUrl(e.target.value.toLowerCase())} className='mt-2 text-center h-8 text-lg rounded-bl-xl rounded-tr-xl' placeholder="Pokemon's Name" type="text" />
+                    <input typeof='text' onFocus={(e) => e.target.value = ""} onChange={(e) => setPokemonUrl(e.target.value.toLowerCase())} className='mt-2 text-center h-8 text-lg rounded-bl-xl border border-black rounded-tr-xl bg-[#93C572] placeholder:text-stone-700' placeholder="Pokemon's Name" type="text" />
                     <div className='flex ml-[120px] gap-3 '>
                         <div className='mt-4 ml-3 h-[7px] w-[45px] border-solid rounded-xl border-black border-2 bg-red-600' ></div>
                         <div className='mt-4 ml-3 h-[7px] w-[45px] border-solid rounded-xl border-black border-2 bg-blue-600' ></div>
@@ -127,20 +136,20 @@ const Main = () => {
 
                     <div className='flex'>
                         {/* press button */}
-                        <button onClick={() => ButtonCall()} className='max-sm:ml-[30px] ml-[65px] border-solid h-16 w-16 rounded-[50%] border-black bg-[#252525] border-2 text-white'>Press</button>
+                        <button onClick={() => ButtonCall()} className='max-sm:ml-[30px] ml-[65px] border-solid h-16 w-16 rounded-[50%] border-black bg-[#252525] border-2 text-white hover:shadow-md hover:shadow-stone-700 hover:drop-shadow-md '>Press</button>
                         {/* green display */}
                         <div className='mt-9 ml-7 h-[75px] w-[120px] border-solid border-black border-2 bg-[#93C572]'>
-                            <h3 className='text-base text-left'>{pokemonInfo ? `Hp: ${pokemonInfo?.hp}` : ""}</h3>
-                            <h3 className='text-base text-left'>{pokemonInfo ? `Atk: ${pokemonInfo?.atk}` : ""}</h3>
-                            <h3 className='text-base text-left'>{pokemonInfo ? `Def: ${pokemonInfo?.def}` : ""}</h3>
+                            <h3 className='text-base text-left ml-[2px]'>{pokemonInfo ? `Hp: ${pokemonInfo?.hp}` : ""}</h3>
+                            <h3 className='text-base text-left ml-[2px]'>{pokemonInfo ? `Atk: ${pokemonInfo?.atk}` : ""}</h3>
+                            <h3 className='text-base text-left ml-[2px]'>{pokemonInfo ? `Def: ${pokemonInfo?.def}` : ""}</h3>
 
 
                         </div>
 
 
                         <div className='max-sm:ml-4 flex ml-12 mt-12'>
-                            <button onClick={() => changeImg()} className='border-solid h-8 w-14  border-black bg-[#252525]  rounded-bl-xl rounded-tl-xl text-white flex justify-center' >< BiLeftArrow className='m-auto' /></button>
-                            <button onClick={() => changeImg()} className='border-solid h-8 w-14  border-black bg-[#252525]  rounded-br-xl rounded-tr-xl text-white flex justify-center' >< BiRightArrow className='m-auto' /></button>
+                            <button onClick={() => changeImg()} className='border-solid h-8 w-14  border-black bg-[#252525]  rounded-bl-xl rounded-tl-xl text-white flex justify-center hover:border hover:border-black hover:border-solid' >< BiLeftArrow className='m-auto' /></button>
+                            <button onClick={() => changeImg()} className='border-solid h-8 w-14  border-black bg-[#252525]  rounded-br-xl rounded-tr-xl text-white flex justify-center hover:border hover:border-black hover:border-solid ' >< BiRightArrow className='m-auto' /></button>
                         </div>
                     </div>
 
