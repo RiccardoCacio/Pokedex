@@ -51,7 +51,7 @@ const Main = () => {
 
     return (
 
-        <main className="max-sm:mt-0 mt-[74px] flex justify-center h-full">
+        <main className="max-sm:mt-0 mt-[70px] flex justify-center h-full">
             <div className='max-sm:border-0 max-sm:rounded-none max-sm:w-[100%] max-sm:mt-0 max-sm:h-screen mt-[40px] h-[660px] w-[500px] border-solid border-black border-2 rounded-3xl bg-[#CB3234] '>
                 <div className='flex'>
                     {/* fotocamera */}
