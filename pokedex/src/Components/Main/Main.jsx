@@ -6,6 +6,7 @@ import { BiRightArrow } from "react-icons/bi";
 import emptyPokeball from "../../Img/emptyPokeball.png";
 import Masterball from "../../Img/masterball.webp";
 
+
 const Main = () => {
     const [pokemonUrl, setPokemonUrl] = useState();
     const [pokemonInfo, setPokemonInfo] = useState(null);
@@ -49,8 +50,9 @@ const Main = () => {
     }
 
     return (
-        <main className='max-sm:mt-0 mt-[100px] flex justify-center h-full'>
-            <div className='max-sm:border-0 max-sm:rounded-none max-sm:w-[100%] max-sm:h-screen h-[660px] w-[500px] border-solid border-black border-2 rounded-3xl bg-[#CB3234] '>
+
+        <main className="max-sm:mt-0 mt-[74px] flex justify-center h-full">
+            <div className='max-sm:border-0 max-sm:rounded-none max-sm:w-[100%] max-sm:mt-0 max-sm:h-screen mt-[40px] h-[660px] w-[500px] border-solid border-black border-2 rounded-3xl bg-[#CB3234] '>
                 <div className='flex'>
                     {/* fotocamera */}
                     <div className='flex justify-center mt-3 ml-3 h-[65px] w-[65px] border-solid border-black border-2 rounded-[50%] bg-slate-300'>
