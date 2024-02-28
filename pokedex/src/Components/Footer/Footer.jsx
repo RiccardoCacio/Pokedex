@@ -4,7 +4,7 @@ import LinkedinSvg from '../../Img/linkedin.svg'
 import GitHubSvg from '../../Img/github.svg'
 const Footer = () => {
     return (
-        <footer className='max-sm:hidden flex flex-wrap mt-12 justify-around bg-[#da2f37] p-12 w-full '>
+        <footer className='max-sm:hidden flex flex-wrap mt-[60px] justify-around bg-[#da2f37] p-12 w-full '>
             <div className=''>
                 <p className=''> Copyright © 2023 - Riccardo Cacio -</p>
                 <p className=''>Developed by Riccardo Cacio</p>
